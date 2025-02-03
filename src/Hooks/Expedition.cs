@@ -50,11 +50,7 @@ public static partial class Hooks
         if (num < 0 || num >= ExpeditionGame.playableCharacters.Count) num = 1;
         orig(self, num);
 
-    	if (num > 7)
-        {
-            SlugcatStats.Name name = ExpeditionGame.playableCharacters[num];
-        }
-        else if (name == Enums.vinki)
+    	if (ExpeditionGame.playableCharacters[num] == Enums.vinki)
         {
             self.slugcatScene = new(nameof(MoreSlugcats.MoreSlugcatsEnums.MenuSceneID.Landscape_VS));
         }
