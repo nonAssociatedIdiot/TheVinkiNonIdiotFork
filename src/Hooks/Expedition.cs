@@ -1,4 +1,5 @@
 ﻿using On.Expedition;
+﻿using Expedition;
 
 namespace Vinki;
 public static partial class Hooks
@@ -50,12 +51,12 @@ public static partial class Hooks
         orig(self, num);
 
     	if (num > 7)
-    	{
-	    SlugcatStats.Name name = ExpeditionGame.playableCharacters[num];
-            else if (name == Enums.vinki)
-	    {
-	        self.slugcatScene = new (nameof(MSCSceneID.Landscape_VS));
-	    }
+        {
+            SlugcatStats.Name name = ExpeditionGame.playableCharacters[num];
+        }
+        else if (name == Enums.vinki)
+        {
+            self.slugcatScene = new(nameof(MoreSlugcats.MoreSlugcatsEnums.MenuSceneID.Landscape_VS));
         }
     }
 }
